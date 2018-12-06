@@ -65,7 +65,7 @@ def main():
             if rand_vec[ind] == ind:
                 conditions_met = False
                 break
-            # Condition 2: not to their own Secret Valentine
+            # Condition 2: not to their own Secret Santa
             elif rand_vec[rand_vec[ind]] == ind:
                 conditions_met = False
                 break
@@ -84,9 +84,9 @@ def main():
                     break
     write_file(givers_list, rand_vec) # write csv file with pairs
     for ind in range(N): # print in Terminal
-        print givers_list[ind][1], "(", givers_list[ind][2], ") to", \
-           givers_list[rand_vec[ind]][1], "(", givers_list[rand_vec[ind]][2], ")"
-    print "Number of iterations needed: ", iteration # Print number of iterations
+        print(givers_list[ind][1], "(", givers_list[ind][2], ") to", \
+           givers_list[rand_vec[ind]][1], "(", givers_list[rand_vec[ind]][2], ")")
+    print("Number of iterations needed: ", iteration)# Print number of iterations
 
 """ This is the standard boilerplate that calls the main() function.
     """

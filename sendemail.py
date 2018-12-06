@@ -28,36 +28,36 @@ import smtplib
     """
 def send_email(pair_list):
     for row in pair_list:
-        from_addr = 'Secret Santa <johnsmith@hotmail.com>'
+        from_addr = 'rick <rick@gmail.com>'
         to_addr  = row[2]
         msg = "\r\n".join([
             "From: " + from_addr,
             "To: " + to_addr,
-            "Subject: Secret Santa",
+            "Subject: Babbo Natale Segreto",
             "",
-            "Dear " + row[0][1:] + " (room " + row[1] + ")",
+            "Cara Babba o Caro Babbo" + row[0][1:] +",",
             "",
-            "Thanks for participating in the Secret Santa!",
+            "Questo e' il Babbo Natale segreto 2018",
             "",
-            "Please find a present for " + row[3] + " (room " + row[4] + ").",
+            "Dovrai essere il Babbo Natale segreto di " + row[3],
             "",
-            "Please reply to this email if you have any questions or issues.",
+            "Cerca di spendere circa 10 euro",
             "",
-            "See you then!",
+            "Potremmo organizzare un giorno prima di Natale",
             "",
-            "Santa"
+            "Buona Serata!"
             ])
-        username = 'johnsmith@hotmail.com'
-        password = 'xxxxxxxx'
-        server = smtplib.SMTP('smtp-mail.outlook.com',587) # if Hotmail/Microsoft Outlook
-        #server = smtplib.SMTP('smtp.gmail.com:587') # if gmail
+        username = 'rick@gmail.com'
+        password = 'passwordd'
+        #server = smtplib.SMTP('smtp-mail.outlook.com',587) # if Hotmail/Microsoft Outlook
+        server = smtplib.SMTP('smtp.gmail.com:587') # if gmail
         server.ehlo()
         server.starttls()
         server.ehlo()
         server.login(username,password)
         server.sendmail(from_addr, to_addr, msg)
         server.quit()
-        print "Email sent to", row[0][1:], ": ", to_addr # Debug: show confirmation in Terminal
+        print("Email sent to", row[0][1:], ": ", to_addr)# Debug: show confirmation in Terminal
 
 """ Define a main() function that calls the necessary functions.
     """
